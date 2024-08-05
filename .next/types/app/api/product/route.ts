@@ -1,4 +1,4 @@
-// File: D:\Professional\Pendimg\bhattarai-app\app\api\product\route.ts
+// File: D:\Personal\bhattarai-app\app\api\product\route.ts
 import * as entry from '../../../../../app/api/product/route.js'
 import type { NextRequest } from 'next/server.js'
 

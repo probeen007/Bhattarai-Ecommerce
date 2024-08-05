@@ -6,6 +6,8 @@ import Footer from "./components/footer/Footer";
 import CartProvider from "@/providers/CartProvider";
 import { Toaster } from "react-hot-toast";
 import { getCurrentUser } from "@/actions/getCurrentUser";
+import { Suspense } from "react";
+import { FaSpinner } from "react-icons/fa";
 
 
 const poppins = Poppins({ subsets: ["latin"], weight: ['400', '700'] });
@@ -34,14 +36,15 @@ export default async function RootLayout({
           }
         }}
         />
-
-        <CartProvider>
-          <div className="flex flex-col min-h-screen">
-            <NavBar />
-            <main className="flex-grow">{children}</main>
-            <Footer />
-          </div>
-        </CartProvider>
+        <Suspense fallback={<div><FaSpinner /></div>}>
+          <CartProvider>
+            <div className="flex flex-col min-h-screen">
+              <NavBar />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+            </div>
+          </CartProvider>
+        </Suspense>
       </body>
     </html >
   );

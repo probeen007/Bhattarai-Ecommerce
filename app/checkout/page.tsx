@@ -1,18 +1,22 @@
 
+import { FaSpinner } from "react-icons/fa";
 import Container from "../components/container";
 import FormWrap from "../components/FormWarp";
 import CheckoutClient from "./CheckoutClient"
+import { Suspense } from "react";
 
 const Checkout = () => {
-    return ( <div className="p-8">
+    return (<div className="p-8">
         <Container>
             <FormWrap>
-                <CheckoutClient/>
+                <Suspense fallback={<div><FaSpinner/></div>}>
+                    <CheckoutClient />
+                </Suspense>
             </FormWrap>
 
         </Container>
 
-    </div> );
+    </div>);
 }
- 
+
 export default Checkout;

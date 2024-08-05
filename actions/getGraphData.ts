@@ -1,5 +1,5 @@
 import prisma from '@/libs/prismadb'
-import { error } from 'console';
+
 import moment from 'moment'
 
 export default async function getGraphData() {

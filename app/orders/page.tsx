@@ -3,6 +3,8 @@ import getCurrentUser from "@/actions/getCurrentUser";
 import NullData from "@/app/components/NullData";
 import getOrdersByUserId from "@/actions/getOrdersByUserId";
 import OrdersClient from "./OrderClient";
+import { Suspense } from "react";
+import { FaSpinner } from "react-icons/fa";
 
 const Orders = async () => {
 
@@ -14,13 +16,15 @@ const Orders = async () => {
 
     const orders = await getOrdersByUserId(currentUser.id)
 
-    if(!orders){
-        return <NullData title="No orders yet...:("/>
+    if (!orders) {
+        return <NullData title="No orders yet...:(" />
     }
-    
+
     return <div className="pt-8">
         <Container>
-            <OrdersClient orders = {orders}/>
+            <Suspense fallback={<div> <FaSpinner/></div>}>
+                <OrdersClient orders={orders} />
+            </Suspense>
         </Container>
     </div>
 

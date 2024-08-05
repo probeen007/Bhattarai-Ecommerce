@@ -1,14 +1,5 @@
 {
-  "node": {
-    "acdff2987515b0fec7160a20c0892c2b31d410cf": {
-      "workers": {
-        "app/product/[productId]/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22D%3A%5C%5CProfessional%5C%5CPendimg%5C%5Cbhattarai-app%5C%5Capp%5C%5Cproduct%5C%5C%5BproductId%5D%5C%5Cpage.tsx%22%2C%5B%22default%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/product/[productId]/page": "rsc"
-      }
-    }
-  },
+  "node": {},
   "edge": {},
-  "encryptionKey": "Gcze+StshvmwJd3yutlPB1J4Ezd/1cXjxDLRytBzpcI="
+  "encryptionKey": "21/VMNEmeHk1w6PN/zn+nAO8fem3zIH2EUgOqOBBTh0="
 }

@@ -3,6 +3,8 @@ import getProducts from "@/actions/getProducts";
 import getCurrentUser from "@/actions/getCurrentUser";
 import NullData from "@/app/components/NullData";
 import ManageProductsClient from "./ManageProductsClient";
+import { Suspense } from "react";
+import { FaSpinner } from "react-icons/fa";
 
 const ManageProducts = async () => {
 
@@ -15,7 +17,9 @@ const ManageProducts = async () => {
 
     return <div className="pt-8">
         <Container>
-            <ManageProductsClient products = {products}/>
+            <Suspense fallback={<div> <FaSpinner/></div>}>
+                <ManageProductsClient products={products} />
+            </Suspense>
         </Container>
     </div>
 
